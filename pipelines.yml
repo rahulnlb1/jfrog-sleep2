@@ -9,4 +9,11 @@ pipelines:
        type: Bash
        execution:
          onExecute:
-           - echo "hello ${WORLD}"
+           - >-
+             if [ -f "hello.txt" ]; then
+               cat hello.txt
+             else
+               echo "hello world" >> hello.txt
+             fi
+           - echo "hello ${WORLD}" >> hello.txt
+           - add_cache_files hello.txt
