@@ -16,4 +16,4 @@ pipelines:
              else
                echo "hello world" >> hello.txt
              fi
-           - add_cache_files hello.txt
+           - add_cache_files hello.txt hello
