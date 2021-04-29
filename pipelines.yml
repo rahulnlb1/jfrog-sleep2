@@ -1,3 +1,14 @@
+resources:
+  - name: wwwGit
+    type: GitRepo
+    configuration:
+      path: rahulnlb1/jfrog-sleep2
+      gitProvider: Github
+      branches:
+        include: ^{{gitBranch}}$
+      files:
+        include: \bwww\/.+\b
+
 pipelines:
  - name: sleep_pipeline
    configuration:
@@ -7,6 +18,9 @@ pipelines:
    steps:
      - name: S_Bash_0023
        type: Bash
+       configuration:
+         inputResources:
+              - name: wwwGit
        execution:
          onExecute:
-           - exit 1
+           - echo "hello ${WORLD}"
