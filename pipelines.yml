@@ -5,7 +5,7 @@ resources:
       path: rahulnlb1/jfrog-sleep2
       gitProvider: Github
       branches:
-        include: ^{{gitBranch}}$
+        include: xxx
       files:
         include: \bwww\/.+\b
 
