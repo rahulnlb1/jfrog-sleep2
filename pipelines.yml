@@ -9,4 +9,4 @@ pipelines:
        type: Bash
        execution:
          onExecute:
-           - echo "hello ${WORLD}"
+           - exit 1
