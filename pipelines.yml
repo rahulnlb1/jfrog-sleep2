@@ -2,7 +2,7 @@ resources:
   - name: wwwGit
     type: GitRepo
     configuration:
-      path: rahulnlb1/jfrog-sleep2
+      path: rahulnlb1/resource-fail
       gitProvider: Github
       branches:
         include: xxx
