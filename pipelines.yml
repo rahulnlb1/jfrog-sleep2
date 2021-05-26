@@ -6,7 +6,7 @@ pipelines:
             WORLD: "world"
    steps:
      - name: S_Bash_0023
-       type: Bash
+       type:
        execution:
          onExecute:
            - echo "hello ${WORLD}"
