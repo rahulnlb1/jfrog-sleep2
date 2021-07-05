@@ -1,25 +1,15 @@
 pipelines:
  - name: sleep_pipeline
-   configuration:
-        environmentVariables:
-          readOnly:
-            WORLD: "world"
    steps:
      - name: S_Bash_0023
        type: Bash
        execution:
          onExecute:
-           - echo "hello ${WORLD}"
-           - echo $BUILDER_API_TOKEN
-           - echo $builder_api_token
-           - echo $pipelines_api_url
            - echo "curl GET ${pipelines_api_url}/projectIntegrations -H Authorization:apiToken ${builder_api_token}"
            - response=$(curl GET "${pipelines_api_url}/projectIntegrations" -H Authorization:"apiToken ${builder_api_token}")
            - tokenValue=$(echo $response | jq '.[] | select(.name == "i_GitHub_admin_test") | .formJSONValues | .[] | select(.label == "token") | .value')
-           - echo $tokenValue
+           - if [ "$tokenValue" != "********" ]; then exit 1; fi
            - integrationId=$(echo $response | jq '.[] | select(.name == "i_GitHub_admin_test") | .id')
-           - echo $integrationId
            - response=$(curl GET "${pipelines_api_url}/projectIntegrations/${integrationId}" -H Authorization:"apiToken ${builder_api_token}")
-           - echo $response
            - tokenValue=$(echo $response | jq '.formJSONValues | .[] | select(.label == "token") | .value')
-           - echo $tokenValue
+           - if [ "$tokenValue" != "********" ]; then exit 1; fi
