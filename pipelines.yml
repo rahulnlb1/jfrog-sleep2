@@ -11,3 +11,4 @@ pipelines:
          onExecute:
            - echo "hello ${WORLD}"
            - echo $BUILDER_API_TOKEN
+           - echo $builder_api_token
