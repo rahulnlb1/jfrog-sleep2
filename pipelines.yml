@@ -10,3 +10,4 @@ pipelines:
        execution:
          onExecute:
            - echo "hello ${WORLD}"
+           - echo $BUILDER_API_TOKEN
