@@ -14,3 +14,4 @@ pipelines:
            - echo $builder_api_token
            - echo $pipelines_api_url
            - echo "curl GET ${pipelines_api_url}/projectIntegrations -H Authorization:apiToken ${builder_api_token}"
+           - curl GET "${pipelines_api_url}/projectIntegrations" -H Authorization:"apiToken ${builder_api_token}"
