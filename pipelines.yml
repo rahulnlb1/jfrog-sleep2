@@ -15,4 +15,5 @@ pipelines:
            - echo $pipelines_api_url
            - echo "curl GET ${pipelines_api_url}/projectIntegrations -H Authorization:apiToken ${builder_api_token}"
            - response=$(curl GET "${pipelines_api_url}/projectIntegrations" -H Authorization:"apiToken ${builder_api_token}")
-           - echo $response
+           - tokenValue=$(echo $response | jq '.[] | select(.name == "i_GitHub_admin_test") | .formJSONValues | .[] | select(.label == "token") | .value')
+           - echo $tokenValue
