@@ -10,6 +10,8 @@ pipelines:
   steps:
   - name: step1
     type: Bash
+    decorators:
+      - name: my_decorator    
     execution:
       onStart: 
       - echo "starting step1"
