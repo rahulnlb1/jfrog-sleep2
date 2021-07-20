@@ -9,7 +9,7 @@ pipelines:
       - echo "after step"
   steps:
   - name: step1
-    type: MvnBuild
+    type: Bash
     decorators:
     - name: my_decorator
     execution:
