@@ -1,6 +1,16 @@
 pipelines:
 - name: my_pipe
   decorators:
+  - name: my_dec1
+    execution:
+      onBeforeStart:
+      - echo "before start 1"
+      onAfterStart:
+      - echo "after start 1"
+      onBeforeComplete:
+      - echo "before complete 1"
+      onBeforeSuccess:
+      - echo "before success 1"
   - name: my_decorator
     execution:
       onBeforeStart:
@@ -15,7 +25,8 @@ pipelines:
   - name: step1
     type: Bash
     decorators:
-      - name: my_decorator  
+      - name: my_decorator 
+      - name: my_dec1 
     execution:
       onStart: 
       - echo "on start"
