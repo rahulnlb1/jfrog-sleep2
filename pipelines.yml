@@ -3,12 +3,14 @@ pipelines:
   decorators:
   - name: my_decorator
     execution:
-      onStart:
-      - echo "before step"
-      onComplete:
-      - echo "after step"
-      onSuccess:
-      - echo "success"
+      onBeforeStart:
+      - echo "before start"
+      onAfterStart:
+      - echo "after start"
+      onBeforeComplete:
+      - echo "before complete"
+      onBeforeSuccess:
+      - echo "before success"
   steps:
   - name: step1
     type: Bash
@@ -16,6 +18,6 @@ pipelines:
       - name: my_decorator  
     execution:
       onStart: 
-      - echo "starting step1"
+      - echo "on start"
       onComplete:
-      - echo "completed step1"  
+      - echo "on complete"  
