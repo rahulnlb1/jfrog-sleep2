@@ -4,13 +4,13 @@ pipelines:
   - name: my_dec1
     execution:
       beforeOnStart:
-      - echo "before start 1"
+      - echo "before start 2"
       afterOnStart:
-      - echo "after start 1"
+      - echo "after start 2"
       beforeOnComplete:
-      - echo "before complete 1"
+      - echo "before complete 2"
       beforeOnSuccess:
-      - echo "before success 1"
+      - echo "before success 2"
   - name: my_decorator
     execution:
       beforeOnStart:
