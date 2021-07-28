@@ -12,8 +12,9 @@ pipelines:
             - echo "hello ${WORLD}"
       - name: S_Bash_0023_2
         type: Bash
-        inputSteps:
-        - S_Bash_0023
+        configuration:
+          inputSteps:
+          - name: S_Bash_0023
         execution:
           onExecute:
             - echo "hello ${WORLD}"
