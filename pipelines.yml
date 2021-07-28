@@ -1,16 +1,16 @@
 pipelines:
- - name: sleep_pipeline
-   configuration:
-        environmentVariables:
-          readOnly:
-            WORLD: "world"
-   steps:
-     - name: S_Bash_0023
-       type: Bash
-       execution:
-         onExecute:
-           - echo "hello ${WORLD}"
-     - name: S_Bash_0023_2
+  - name: sleep_pipeline
+    configuration:
+          environmentVariables:
+            readOnly:
+              WORLD: "world"
+    steps:
+      - name: S_Bash_0023
+        type: Bash
+        execution:
+          onExecute:
+            - echo "hello ${WORLD}"
+      - name: S_Bash_0023_2
         type: Bash
         execution:
           onExecute:
