@@ -33,6 +33,7 @@ pipelines:
           inputResources:
             - name: S_WF_6544_001_resource_1
             - name: S_WF_6544_001_resource_2
+            - name: S_WF_6544_001_resource_3
         execution:
           onExecute:
             - Write-Output "test"
