@@ -5,25 +5,9 @@ pipelines:
             readOnly:
               WORLD: "world"
     steps:
-      - name: S_Bash_0023
+      - name: step1
         type: Bash
         execution:
           onExecute:
             - echo "hello ${WORLD}"
-      - name: S_Bash_0023_2
-        type: Bash
-        configuration:
-          inputSteps:
-          - name: S_Bash_0023
-        execution:
-          onExecute:
-            - echo "hello ${WORLD}"
-      - name: S_Bash_0023_3
-        type: Bash
-        configuration:
-          inputSteps:
-          - name: S_Bash_0023
-          - name: S_Bash_0023_2
-        execution:
-          onExecute:
-            - echo "hello ${WORLD}"
+            - sleep 5m
