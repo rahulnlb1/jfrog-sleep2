@@ -26,4 +26,4 @@ pipelines:
           - name: S_Bash_0023_2
         execution:
           onExecute:
-            - echo "hello ${WORLD}"
+            - echo "hello ${WORLD}. "
