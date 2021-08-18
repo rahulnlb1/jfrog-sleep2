@@ -5,4 +5,4 @@ pipelines:
        type: Bash
        execution:
          onExecute:
-           - echo "hello test world updated 1"
+           - echo "hello test world updated 2"
