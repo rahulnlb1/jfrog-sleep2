@@ -7,6 +7,9 @@ pipelines:
     steps:
       - name: S_Bash_0023
         type: Bash
+        configuration:
+          runtime:
+            type: host
         execution:
           onExecute:
             - echo "hello ${WORLD}"
