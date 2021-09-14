@@ -10,6 +10,7 @@ pipelines:
         execution:
           onExecute:
             - echo "hello ${WORLD}"
+            - mkdir -p /var/testcreation
       - name: S_Bash_0023_2
         type: Bash
         configuration:
